@@ -8,9 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var red: Double = 15
+    @State private var green: Double = 100
+    @State private var blue: Double = 200
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack{
+            Color(.systemTeal).edgesIgnoringSafeArea(.all) // заливка черным
+            
+            VStack {
+                ColorBoard(red: $red, green: $green, blue: $blue)
+                
+                SliderAndTexts(colorValue: $red, sliderAccentColor: Color(.red))
+                SliderAndTexts(colorValue: $green, sliderAccentColor: Color(.green))
+                SliderAndTexts(colorValue: $blue, sliderAccentColor: Color(.blue))
+                
+                Spacer()
+            }
+        }
     }
 }
 
