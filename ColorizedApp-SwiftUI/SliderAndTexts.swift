@@ -10,19 +10,8 @@ import SwiftUI
 struct SliderAndTexts: View {
     
     @Binding var colorValue: Double
-    @State var sliderAccentColor: Color
+    let sliderAccentColor: Color
     @State private var showAlert = false
-    
-    func checkValue() {
-        if colorValue > 255 {
-            showAlert = true
-            colorValue = 255
-        }
-        if colorValue < 0 {
-            showAlert = true
-            colorValue = 0
-        }
-    }
     
     var body: some View {
         HStack {
@@ -56,8 +45,20 @@ struct SliderAndTexts: View {
             
         }.padding(.horizontal, 10)
     }
+    
+    private func checkValue() {
+        if colorValue > 255 {
+            showAlert = true
+            colorValue = 255
+        }
+        if colorValue < 0 {
+            showAlert = true
+            colorValue = 0
+        }
+    }
 }
 
+// MARK:  - Functions
 struct SliderAndTexts_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {

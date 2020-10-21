@@ -18,11 +18,11 @@ struct ContentView: View {
             Color(.systemTeal).edgesIgnoringSafeArea(.all) // заливка черным
             
             VStack {
-                ColorBoard(red: $red, green: $green, blue: $blue)
+                ColorBoard(red: red, green: green, blue: blue)
                 
-                SliderAndTexts(colorValue: $red, sliderAccentColor: Color(.red))
-                SliderAndTexts(colorValue: $green, sliderAccentColor: Color(.green))
-                SliderAndTexts(colorValue: $blue, sliderAccentColor: Color(.blue))
+                SliderAndTexts(colorValue: $red, sliderAccentColor: .red)
+                SliderAndTexts(colorValue: $green, sliderAccentColor: .green)
+                SliderAndTexts(colorValue: $blue, sliderAccentColor: .blue)
                 
                 Spacer()
             }

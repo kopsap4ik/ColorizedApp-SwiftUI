@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ColorBoard: View {
     
-    @Binding var red: Double
-    @Binding var green: Double
-    @Binding var blue: Double
+    let red: Double
+    let green: Double
+    let blue: Double
     
     var body: some View {
         Color(red: red / 255, green: green / 255, blue: blue / 255)
@@ -24,6 +24,6 @@ struct ColorBoard: View {
 
 struct ColorBoard_Previews: PreviewProvider {
     static var previews: some View {
-        ColorBoard(red: .constant(0), green: .constant(100), blue: .constant(255))
+        ColorBoard(red: 10, green: 100, blue: 200)
     }
 }
