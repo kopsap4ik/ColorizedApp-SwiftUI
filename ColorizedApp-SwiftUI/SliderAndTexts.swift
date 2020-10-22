@@ -47,6 +47,12 @@ struct SliderAndTexts: View {
     }
     
     private func checkValue() {
+
+//        if !(0...255).contains(colorValue){
+//            showAlert = true
+//            colorValue = 0
+//        }
+        
         if colorValue > 255 {
             showAlert = true
             colorValue = 255
